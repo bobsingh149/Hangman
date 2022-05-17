@@ -10,7 +10,7 @@ def game(**kargs):
     life=len(stages)-1
     idx=random.randint(0,len(word_list))
     word=word_list[idx]
-    print(word)
+    
     postnMap={}
     
     for idx,letter in enumerate(word):
@@ -32,6 +32,9 @@ def game(**kargs):
         print()
         guess=str(input('Guess a letter: '))
         
+        if guess in correctGuess:
+            print('Its alrady guessed')
+            continue
         
         if guess in postnMap:
             
